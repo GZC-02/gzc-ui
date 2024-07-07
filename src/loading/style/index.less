@@ -1,0 +1,93 @@
+@ballSize: 4px; //小球尺寸
+@containerSize: 70px; //容器尺寸
+@ani-duration: 2000ms;
+
+.loading {
+  position: relative;
+  width: @containerSize;
+  height: @containerSize;
+
+  margin: 50px;
+  // border: 1px solid #fff;
+  border-radius: 50%;
+  .dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: @ballSize;
+    height: @ballSize;
+    margin-left: -(@ballSize / 2);
+    margin-top: -(@ballSize / 2);
+    // background-color: red;
+    perspective: 70px;
+    transform-style: preserve-3d;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: @ballSize;
+      height: @ballSize;
+      border-radius: 50%;
+    }
+    &::before {
+      top: 100%;
+      //background-color: #fff;
+      animation: moveWhite @ani-duration infinite;
+    }
+    &::after {
+      bottom: 100%;
+      //background-color: #000;
+      animation: moveBlack @ani-duration infinite;
+    }
+  }
+}
+
+@n: 36;
+@pdeg: (360deg / @n);
+
+.loop(@i) when(@i <= @n) {
+  .dot:nth-child(@{i}) {
+    transform: rotate((@pdeg * @i)) translateY((-@containerSize / 2));
+    &::before,&::after {
+      animation-delay: -(@ani-duration / @n * 6 * @i);
+    }
+  }
+  .loop(@i + 1);
+}
+.loop(1);
+
+@keyframes moveBlack {
+  0% {
+    // animation-timing-function: ease-in;
+  }
+  25% {
+    transform: translate3d(0, 100%, @ballSize);
+    // animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translate3d(0, 200%, 0);
+    // animation-timing-function: ease-in;
+  }
+  75% {
+    transform: translate3d(0, 100%, -@ballSize);
+    // animation-timing-function: ease-out;
+  }
+}
+@keyframes moveWhite {
+  0% {
+    animation-timing-function: ease-in;
+  }
+  25% {
+    transform: translate3d(0, -100%, -@ballSize);
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    transform: translate3d(0, -200%, 0);
+    animation-timing-function: ease-in;
+  }
+
+  75% {
+    transform: translate3d(0, -100%, @ballSize);
+    animation-timing-function: ease-out;
+  }
+}
