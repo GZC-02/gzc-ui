@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab491cd6-f6f8-43c6-a7ef-937e2f4db636" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="ab491cd6-f6f8-43c6-a7ef-937e2f4db636" name="更改" comment="更改">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,11 +84,24 @@
       <updated>1720235473317</updated>
       <workItem from="1720235473319" duration="2000" />
       <workItem from="1720235483472" duration="3519000" />
-      <workItem from="1720321268105" duration="458000" />
+      <workItem from="1720321268105" duration="640000" />
     </task>
+    <task id="LOCAL-00001" summary="更改">
+      <option name="closed" value="true" />
+      <created>1720321840393</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720321840393</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="更改" />
   </component>
 </project>
